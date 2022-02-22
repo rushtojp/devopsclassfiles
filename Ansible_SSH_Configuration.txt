@@ -1,0 +1,46 @@
+
+
+
+####
+
+/etc/hosts configuration for name resolution
+
+Add below entries in the other two nodes
+
+vi /etc/hosts add other two hostnames with the ip address
+
+192.168.56.151 ansible-master
+192.168.56.152 ansible-node1
+192.168.56.153 ansible-node2
+
+
+
+
+#######
+
+for EC2 instances
+
+cat /root/.ssh/id_rsa.pub  . and press enter
+
+and copy the content of the  file..
+
+go to the node1 and login as ubuntu user 
+
+and enter nano .ssh/authorized_keys
+
+open the file and paste it there..
+
+for EC2 instances
+
+use ssh-copy-id username@ip address
+
+for EC2 instances use ubuntu@ip-address
+
+copy the file from master to the slaves
+
+root@ansible-master:~# cat /root/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9zl6SovBA/xs3Rh4qfklBFGx226i9eY6UoKjI2/qmztb22pXxPYojS1qv+2j1AqeFwjDm85nWr9/0rHi2mFkpYNnwp7dmQGQrlYDGFXZx+s4clZVfxpirRO504RK/TUfHAE5P9rd6zWTqf7dW49cl5v8FagLDLEkyDhUdZhJ7VPXtcFbpPmPamUv+1nxR41q6J6gawFxn0Rp4VqfQ4fy5RGRhdEcpIKAXDz8w5WY+xeDjHWpJ4Kr3adP9qJ4z5+ZGTLgz5osRXUYh91ABHKWGk7HT8Pd0mQOcReAty18y5AULi1v7D2utAo6axGDC5u1M1KmAgijl2Dc3rOmXm3oP root@ansible-master
+root@ansible-master:~#
+
+
+#######
