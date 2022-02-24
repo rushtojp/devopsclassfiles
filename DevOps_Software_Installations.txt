@@ -2,7 +2,6 @@ Git Client
 
 https://git-scm.com/downloads
 
-
 Vagrant Download Link - optional  - you may also use AWS VMs
 
 https://www.vagrantup.com/downloads
@@ -28,3 +27,7 @@ https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powersh
 WSL - windows subsystem for linux
 
 https://docs.microsoft.com/en-us/windows/wsl/about
+
+VS Code download and installation
+
+https://code.visualstudio.com/download
