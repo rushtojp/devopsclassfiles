@@ -1,0 +1,76 @@
+Ubuntu  -> https://learn.hashicorp.com/tutorials/terraform/install-cli
+------
+sudo apt-get update && sudo apt-get install -y gnupg software-properties-common curl
+curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+sudo apt-get update && sudo apt-get install terraform
+mkdir learn-terraform-docker-container
+cd learn-terraform-docker-container
+
+main.tf
+------------------------
+terraform {
+  required_providers {
+    docker = {
+      source  = "kreuzwerker/docker"
+      version = "~> 2.13.0"
+    }
+  }
+}
+
+provider "docker" {}
+
+resource "docker_image" "nginx" {
+  name         = "nginx:latest"
+  keep_locally = false
+}
+
+resource "docker_container" "nginx" {
+  image = docker_image.nginx.latest
+  name  = "tutorial"
+  ports {
+    internal = 80
+    external = 8000
+  }
+}
+-----------------------------
+
+terraform init
+terraform apply
+terraform destroy
+-------------------------------------------------------
+
+Terraform aws
+https://learn.hashicorp.com/tutorials/terraform/aws-build?in=terraform/aws-get-started
+
+------------------------------------------------------------------------------------
+# multiple ec2 instances
+https://automateinfra.com/2021/03/22/how-to-launch-multiple-ec2-instances-on-aws-using-terraform/
+
+
+
+====================================================================================
+
+#Terraform with Azure    https://learn.hashicorp.com/tutorials/terraform/azure-build
+
+#Prerequisites
+   Create azure account
+   Install the Azure CLI tool
+   Authenticate using the Azure CLI   -  az login
+
+mkdir D:\learn-terraform\azure
+cd D:\learn-terraform\azure
+#create main.tf to create resouce group
+
+terraform init
+terraform plan
+terraform apply
+---------------------------
+#rename main.tf with main.tf.1
+#rename main.tf.2 main.tf to create VM
+
+
+terraform init
+terraform plan
+terraform apply
+----------------------------------------------
