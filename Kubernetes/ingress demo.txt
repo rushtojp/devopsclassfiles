@@ -1,0 +1,15 @@
+minikube addons enable ingress
+kubectl get pods -n kube-system
+kubectl create deployment web --image=gcr.io/google-samples/hello-app:1.0
+kubectl expose deployment web --type=NodePort --port=8080
+kubectl get service web
+minikube service web --url
+curl <output of above command IP>
+
+
+kubectl create deployment web2 --image=gcr.io/google-samples/hello-app:2.0
+kubectl expose deployment web2 --port=8080 --type=NodePort
+kubectl apply -f example-ingress-2.yaml
+kubectl get ingress
+curl hello-world-2.info  or curl hello-world-2.info/v1
+curl hello-world-2.info/v2
