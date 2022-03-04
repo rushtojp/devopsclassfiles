@@ -1,0 +1,41 @@
+JP's Linkedin : https://www.linkedin.com/in/jayaprakashbalakrishnan/
+
+KUbernetes
+##############
+
+https://kubernetes.io/docs/tasks/run-application/
+
+https://www.katacoda.com/courses/kubernetes/playground
+
+https://labs.play-with-k8s.com/
+
+Azure Architecture Center
+#############################
+
+https://docs.microsoft.com/en-us/azure/architecture/
+
+
+AWS Architecture Center
+##########################
+
+https://aws.amazon.com/architecture/
+
+DevOPS BOOKS
+#############
+
+Devops handbook by Gene Kim
+
+https://www.amazon.in/DevOPS-Handbook-World-Class-Reliability-Organizations/dp/1942788002/ref=sr_1_1?crid=OC5V2PUQL9N8&keywords=devops+books+by+gene+kim&qid=1646352439&sprefix=devops+books+by+gene+kim%2Caps%2C285&sr=8-1
+
+https://www.amazon.in/Phoenix-Project-Devops-Helping-Business/dp/1942788290
+
+https://www.amazon.in/Unicorn-Project-Developers-Disruption-Thriving/dp/1942788762/ref=pd_sbs_3/261-4074561-2004653?pd_rd_w=lePfs&pf_rd_p=2cc6ee6d-5e48-4262-84d1-99c2a988deb6&pf_rd_r=TK58QEF2Z1DNE7TRAYYZ&pd_rd_r=f4c6360f-5459-4756-9ac6-4c2f422c3479&pd_rd_wg=h4TC1&pd_rd_i=1942788762&psc=1
+
+Cloud resources by AWS, Azure, GCP and Oracle
+
+###############################################
+
+pls visit their respective sites for credits
+
+
+
