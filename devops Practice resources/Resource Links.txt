@@ -39,7 +39,16 @@ Cloud resources by AWS, Azure, GCP and Oracle
 
 ###############################################
 
-pls visit their respective sites for credits
+pls visit their respective sites for free credits
+
+Azure Devops Demo Generator
+##############################
+
+https://azuredevopslabs.com/labs/vstsextend/Setup/
+
+https://azuredevopsdemogenerator.azurewebsites.net/
+
+
 
 
 
