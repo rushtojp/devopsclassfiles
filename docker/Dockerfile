@@ -5,7 +5,7 @@ CMD ["figlet", "-f", "script", "hello"]
 # ENTRYPOINT ["figlet", "-f", "script"]
 
 
-# ENTRYPOINT ["figlet1", "-f", "script"]
+# ENTRYPOINT ["figlet", "-f", "script"]
 
 # CMD ["hello"]
 
