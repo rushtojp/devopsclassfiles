@@ -53,6 +53,14 @@ Devops Interview Questions
 
 https://github.com/rushtojp/devops-commands/tree/main/DevOps%20Interview%20Quesions
 
+####################
+
+Redhat Ansible workshops
+
+https://aap2.demoredhat.com/
+
+
+
 
 
 
