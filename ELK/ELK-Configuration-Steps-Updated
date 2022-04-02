@@ -155,7 +155,7 @@ stop elasticsearch
 
 Reboot order
 
-Start Elasticache - service elasticache start
+Start Elasticache - service elasticsearch start
 Start Logstash - service logstash start
 Start Kibana -service kibana start
 
