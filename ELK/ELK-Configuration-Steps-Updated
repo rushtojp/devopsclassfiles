@@ -1,0 +1,181 @@
+apt-get update
+apt-get install openjdk-8-jdk -y
+apt-get install nginx -y
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
+sudo apt update
+sudo apt install elasticsearch
+
+sudo apt install kibana
+
+sudo apt install logstash
+
+sudo apt install filebeat
+
+
+###  vi /etc/elasticsearch/elasticsearch.yml
+
+network.host: localhost
+
+-------------------
+sudo systemctl start elasticsearch
+sudo systemctl status elasticsearch
+
+##########
+
+curl -X GET "localhost:9200"
+
+
+##### vi /etc/kibana/kibana.yml
+
+server.port: 5601
+server.host: localhost
+
+########
+
+
+sudo systemctl start kibana
+sudo systemctl status kibana
+
+
+echo "kibanaadmin:`openssl passwd -apr1`" | sudo tee -a /etc/nginx/htpasswd.users
+
+
+cp  /etc/nginx/sites-available/default  /etc/nginx/sites-available/default.bak
+
+### vi /etc/nginx/sites-available/default                # can take backup first
+
+server {
+    listen 80;
+
+    server_name 192.168.56.110;
+
+    auth_basic "Restricted Access";
+    auth_basic_user_file /etc/nginx/htpasswd.users;
+
+    location / {
+        proxy_pass http://localhost:5601;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+########################################
+
+sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo nginx -t
+
+
+sudo systemctl restart nginx
+sudo systemctl status nginx
+
+sudo ufw allow 'Nginx Full' (optional)
+
+
+sudo systemctl start logstash
+sudo systemctl status logstash
+
+# access kibana at http://192.168.56.110  i.e. your VM IP address or public IP of EC2 instance           
+
+http://192.168.56.110
+
+
+
+===================================================================
+Lab work
+--------
+
+Example-1 : sample data
+	Manage spaces -> Kibana -> Index patterns -> Add sample data -> sample flight data -> view data -> dashboard
+
+Example-2 : upload csv file	
+
+	wget https://raw.githubusercontent.com/PacktPublishing/Kibana-7-Quick-Start-Guide/master/Chapter02/crimes_2001.csv
+	
+	root@elk:~# cp crimes_2001.csv /home/vagrant/
+
+
+        vi /etc/logstash/conf.d/crimes.conf
+
+# Logstash configuration file to read CSV data. Add Elasticsearch username and password if you have configured the security.
+input {
+	file {
+		path => "/home/vagrant/crimes_2001.csv"
+		start_position => beginning
+	}
+}
+filter {
+	csv {
+		columns => [
+			"ID",
+			"Case Number",
+			"Date",
+			"Block",
+			"IUCR",
+			"Primary Type",
+			"Description",
+			"Location Description",
+			"Arrest",
+			"Domestic",
+			"Beat",
+			"District",
+			"Ward",
+			"Community Area",
+			"FBI Code",
+			"X Coordinate",
+			"Y Coordinate",
+			"Year",
+			"Updated On",
+			"Latitude",
+			"Longitude",
+			"Location"
+		]
+		separator => ","
+	}
+}
+output {
+	elasticsearch {
+		action => "index"
+		hosts => ["127.0.0.1:9200"]
+		index => "crimes"
+	}
+}
+
+
+############
+
+Restart Procedure after the services are shutdown
+Graceful shutdown procedure
+
+stop logstash
+stop kibana
+stop elasticsearch
+
+Reboot order
+
+Start Elasticache - service elasticache start
+Start Logstash - service logstash start
+Start Kibana -service kibana start
+
+After sometime reboot nginx server as well.
+
+nginx - service nginx start
+
+------------------------------------------------------------------
+service logstash restart
+
+Goto kibana dashboard -> D -> manage spaces - kibana -> Index management should have the entry for "crimes_2001.csv" after some time.
+Goto kibana dashboard -> D -> manage spaces - kibana - index patterns - create index pattern -crime* - @timestamp
+
+Discover -> change index pattern -> crime*
+
+#filter
+
+Click on arrest -> visualize -> save (Arrest data for last week) -> save on dashboard
+save dashboard as "Crime Dashboard"
+Goto dashboard and verify
+
+Create visualization -> community area -> visualize -> Pie graph - save and return -> Title : "Comminity wise crime in last week"
+Search -> select fields - Date Domestic District Description -> Save -> Domestic telephone threats for lst week. (can be checked from open option from top right side)
