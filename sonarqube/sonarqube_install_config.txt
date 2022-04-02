@@ -1,0 +1,151 @@
+sudo apt-get update
+sudo apt-get install  curl  apt-transport-https ca-certificates software-properties-common -y
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo apt-get update
+sudo apt-get install -y docker-ce
+service docker status
+
+
+#####################
+
+docker pull sonarqube:6.7.7-community
+
+docker run -d -p 9000:9000 sonarqube:6.7.7-community
+
+
+sudo apt-get install openjdk-8-jdk -y
+
+
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+
+echo $JAVA_HOME
+
+
+----< Installing Maven >----
+
+cd /opt
+
+wget  https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.6.2/apache-maven-3.6.2-bin.tar.gz
+
+tar zxf apache-maven-3.6.2-bin.tar.gz
+
+cd apache-maven-3.6.2
+
+cd bin/
+
+./mvn -version
+
+export PATH=$PATH:/opt/apache-maven-3.6.2/bin
+
+Fork the Petclinic repository and clone the git repository
+
+Git Clone PetClinic 
+
+Go to home folder
+
+CD ~
+
+git clone https://github.com/rushtojp/PetClinic.git
+
+cd PetClinic
+
+'mvn compile' // to compile the project
+
+Please ensure to get the build success message.
+
+
+#######
+
+Go to the docker ip addres:9000 and create the project
+
+http://192.168.56.196:9000/
+
+and login with username and password admin : admin
+
+
+
+----< Performing the analysis of the sample code on SonarQube >----
+
+'/opt/apache-maven-3.6.1/bin/mvn <sonnar content from the website>' //get the code from sonarqube and perfrom this code from PetClinic folder
+
+after this welcome to sonarqube message
+
+enter a name for the token : PetClinic
+
+and generate 
+
+whats your projects main language - choose java and in build technology -
+
+choose maven
+
+
+###
+
+after that choose the below code
+
+Execute the SonarQube Scanner for Maven from your computer
+Running a SonarQube analysis with Maven is straighforward. You just need to run the following command in your project's folder.
+
+
+copy the code below that and run it in the vagrant machine..
+
+
+mvn sonar:sonar \
+  -Dsonar.host.url=http://20.65.53.194:9001 \
+  -Dsonar.login=86abe96012ad47db813ca034a45cb1473af4ed28
+
+###########
+
+Provide a token
+petclinic: 5bcf2226e7fbd83249e8c3673d916ce777fb4fa9
+
+
+
+sudo update-alternatives --set java /usr/lib/jvm/jdk1.8.0_312/bin/java
+
+
+
+
+
+
+#########
+
+
+----< Installing Maven >----
+
+'cd /opt'
+
+'wget  http://mirrors.estointernet.in/apache/maven/maven-3/3.6.2/binaries/apache-maven-3.6.2-bin.tar.gz' 
+
+'tar zxf apache-maven-3.6.2-bin.tar.gz'
+
+'cd apache-maven-3.6.2'
+
+'cd bin/'
+
+'./mvn -version'
+
+'export PATH=$PATH:/opt/apache-maven-3.6.2/bin' 
+
+
+'cd PetClinic'
+
+'mvn compile' // to compile the project
+
+----< Performing the analysis of the sample code on SonarQube >----
+
+'/opt/apache-maven-3.6.1/bin/mvn <sonnar content from the website>' //get the code from sonarqube and perfrom this code from PetClinic folder
+
+
+
+
+
+
+export PATH=$PATH:$JAVA_HOME/bin
+
+
+export PATH=$PATH:/usr/share/maven/bin
+
+root@AnsibleNode1:~/PetClinic# mvn compile
+
