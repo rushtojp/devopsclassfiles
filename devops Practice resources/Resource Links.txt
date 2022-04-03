@@ -29,7 +29,7 @@ DevOPS BOOKS
 
 Devops handbook by Gene Kim
 
-https://www.amazon.in/DevOPS-Handbook-World-Class-Reliability-Organizations/dp/1942788002/ref=sr_1_1?crid=OC5V2PUQL9N8&keywords=devops+books+by+gene+kim&qid=1646352439&sprefix=devops+books+by+gene+kim%2Caps%2C285&sr=8-1
+https://www.amazon.in/DevOps-Handbook-World-Class-Reliability-Organizations-ebook/dp/B09G2GS39R/ref=pd_sbs_sccl_1/260-0972236-0929513?pd_rd_w=yrYSu&pf_rd_p=2cc6ee6d-5e48-4262-84d1-99c2a988deb6&pf_rd_r=XKE7T77QRBFQGACS7AA4&pd_rd_r=801225c6-e975-407d-8bba-0dd089bb26e2&pd_rd_wg=DeR2V&pd_rd_i=B09G2GS39R&psc=1
 
 https://www.amazon.in/Phoenix-Project-Devops-Helping-Business/dp/1942788290
 
