@@ -1,3 +1,8 @@
+Please create a ubuntu 18.04 image and open all the ports. though 9000 is what is required to be specific.
+
+
+#########
+
 sudo apt-get update
 sudo apt-get install  curl  apt-transport-https ca-certificates software-properties-common -y
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -54,6 +59,7 @@ cd PetClinic
 
 Please ensure to get the build success message.
 
+after that copy the maven code from the sonarqube website and run it here.
 
 #######
 
@@ -67,7 +73,6 @@ and login with username and password admin : admin
 
 ----< Performing the analysis of the sample code on SonarQube >----
 
-'/opt/apache-maven-3.6.1/bin/mvn <sonnar content from the website>' //get the code from sonarqube and perfrom this code from PetClinic folder
 
 after this welcome to sonarqube message
 
@@ -111,6 +116,7 @@ sudo update-alternatives --set java /usr/lib/jvm/jdk1.8.0_312/bin/java
 
 #########
 
+Other references to troubleshoot
 
 ----< Installing Maven >----
 
@@ -138,6 +144,7 @@ sudo update-alternatives --set java /usr/lib/jvm/jdk1.8.0_312/bin/java
 '/opt/apache-maven-3.6.1/bin/mvn <sonnar content from the website>' //get the code from sonarqube and perfrom this code from PetClinic folder
 
 
+'/opt/apache-maven-3.6.1/bin/mvn <sonnar content from the website>' //get the code from sonarqube and perfrom this code from PetClinic folder
 
 
 
