@@ -13,3 +13,12 @@ kubectl apply -f example-ingress-2.yaml
 kubectl get ingress
 curl hello-world-2.info  or curl hello-world-2.info/v1
 curl hello-world-2.info/v2
+
+
+########
+
+Kubectl get ingress
+
+the above command will help to get the cluster ip address and update that ip address in /etc/hosts file with below details for the curl command to work..
+
+10.25.65.1 hello-world-2.info
