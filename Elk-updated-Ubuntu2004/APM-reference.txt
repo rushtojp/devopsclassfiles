@@ -1,0 +1,7 @@
+APM Installation reference for APT
+
+https://www.elastic.co/guide/en/apm/server/current/setup-repositories.html
+
+APM Installation on Ubuntu with ELK Stack
+
+https://logz.io/blog/application-performance-monitoring/
