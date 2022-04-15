@@ -23,3 +23,12 @@ proxy_set_header Host $host;
 proxy_cache_bypass $http_upgrade;
 }
 }
+
+
+APM-server xml location
+
+root@ELK-APM-DemoApr15:/usr/share/apm-server/bin# cd /etc/apm-server/
+root@ELK-APM-DemoApr15:/etc/apm-server# ls
+apm-server.yml  fields.yml
+root@ELK-APM-DemoApr15:/etc/apm-server# vim
+
