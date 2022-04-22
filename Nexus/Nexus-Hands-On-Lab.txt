@@ -1,0 +1,200 @@
+===============< Nexus Hands On >===============
+
+===============< On Browser >===============
+
+default username & password: admin & admin123 (respectively)
+
+
+to get the pasword for the admin you need to go inside the docker container and then go inside cd /nexus-data/admin.password
+
+
+go to settings up below the navigation bar (its a gear icon)
+
+//it will show us the repository
+
+//we need a sample project and a build tool to perform all the shizz.
+
+//install apache
+
+'cd /opt'
+
+'wget http://mirrors.estointernet.in/apache/maven/maven-3/3.6.2/binaries/apache-maven-3.6.2-bin.tar.gz'
+
+'tar zxf apache-maven-3.6.2-bin.tar.gz'
+
+'cd apache-maven-3.6.2'
+
+'cd bin/'
+
+'./mvn -version'
+
+'export PATH=$PATH:/opt/apache-maven-3.6.2/bin'
+
+//we need to integrate maven with nexus like how we did it with JFROG, this is for dependency management
+
+'id'// will show which user are you logged in
+
+// home directory for root user is '/root' this is where the user will be placed when he logs in and all the other user's home directory is /home/<username>
+
+'cd /root' //try to go to home directory 
+
+'ls -a' //shows hidden files also if you want to make a file/direcotry hidden just add a '.' before the name while naming it
+
+'mkdir .m2' // it is a hidden folder that we are creating
+
+'cd .m2'
+
+'touch settings.xml' // this is to create the settings file
+
+'vi settings.xml' // to connect maven to Nexus
+
+++++++++++++++++< settings.xml >++++++++++++++++
+	<?xml version="1.0" encoding="UTF-8"?>
+	<settings xmlns="http://maven.apache.org/SETTINGS/1.1.0"
+	  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd">
+
+	  <servers>
+	    <server>
+	      <id>nexus</id>
+	      <username>admin</username>
+	      <password>admin123</password>
+	    </server>
+	  </servers>
+
+	  <mirrors>
+	    <mirror>
+	      <id>nexus</id>
+	      <name>central</name>
+	      <url>http://52.66.25.4:8081/repository/maven-public/</url> 
+	      <mirrorOf>*</mirrorOf>
+	    </mirror>
+	  </mirrors>
+
+	</settings>
+++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// now we will get the sample code
+
+'yum install git'
+
+'git clone https://github.com/gouthamchilakala/sample-maven-project.git'
+
+'cd sample-maven-project'
+
+'vi pom.xml' 
+
+
+Constantly changing code:
+	each time they change, the won't or sometimes wouldn't need to change the version number, but they still would want the latest WAR file to be uploaded
+
+1.0.0-snapshot // whenever you give -snapshot in the pom.xml file, each time it is built it will be updated on the test server.
+
+1.0.0 // this is actual release
+
+
+//below we will change the distribution management
+
+++++++++++++++++< settings.xml >++++++++++++++++
+	<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	  <modelVersion>4.0.0</modelVersion>
+
+	  <groupId>flipkart</groupId>
+	  <artifactId>offers</artifactId>
+	  <version>1.1-release</version>
+	  <packaging>jar</packaging>
+
+	  <name>offers</name>
+	  <url>http://maven.apache.org</url>
+
+	  <properties>
+	    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	  </properties>
+
+	  <dependencies>
+	    <dependency>
+	      <groupId>junit</groupId>
+	      <artifactId>junit</artifactId>
+	      <version>3.8.1</version>
+	      <scope>test</scope>
+	    </dependency>
+	  </dependencies>
+
+
+
+	  <distributionManagement>
+	      <repository>
+	          <id>nexus</id>
+	          <name>maven-releases</name>
+	          <url>http://localhost:8081/repository/maven-releases</url>
+	      </repository>
+
+	      <snapshotRepository>
+	          <id>nexus</id>
+	          <name>maven-snapshots</name>
+	          <url>http://localhost:8081/repository/maven-snapshots</url>
+	      </snapshotRepository>
+	  </distributionManagement>
+
+	</project>
+++++++++++++++++< settings.xml >++++++++++++++++
+
+'mvn compile'
+
+//it will be going through the nexus repository if you see it.
+
+go to the browser, select 'browse server contents' that is next to the gear icon below the navigation bar
+
+click on 'maven-public' // this will be our central repository
+
+// you can see there are a lot of dependencies downloaded there
+
+// we will also need to learn how maven will upload its artifacts to the nexus reposiotry
+
+'mvn deploy' // this will do the needful, deploy the sample project hence creating the JAR file and uploading it to the nexus
+
+'ls'
+
+'cd target/'
+
+// you can now see the JAR file in here if you ls again, but it needs to be in the nexus, so to see if it is actually there we can go and check
+
+goto the browser, under Browse server contents
+
+// here we can see under 'maven-releases' that the file of version 0.1.0 or which ever version was mentioned in the pom.xml file will be there
+
+//if we change the version in the pom.xml hence simulating a change in the code 
+
+go to where the 'pom.xml' file is // it will mostly be inside the project folder
+
+'vi pom.xml'
+
++++++++< pom.xml >+++++++
+	...
+		<version>0.2.0</version>
+	...
++++++++++++++++++++++++++
+
+'mvn deploy'
+
+// now that we have simulated a change we will see whether the chnages have been reflected in the nexus
+
+go to the browser, refresh, go to browse server contents , inside the maven-release folder under the customercare repository you can see that both 0.1.0 and 0.2.0 //both the artifacts are available hence nexus acts as artifact repository just like JFrog acted as one.
+
+
+// to simulate a snapshot situation we will go to the pom.xml file and do the exact same thing except we will also add '-Snapshot' in the version name
+
+go to where the 'pom.xml' file is // it will mostly be inside the project folder
+
+'vi pom.xml'
+
++++++++< pom.xml >+++++++
+	...
+		<version>0.2.0-Snapshot</version> // 'S' must be capital here
+	...
++++++++++++++++++++++++++
+
+'mvn deploy'
+
+goto browser & refresh, click 'maven-snapshots' // you can see the artifact
