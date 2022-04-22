@@ -1,0 +1,30 @@
+==========< Nexus Installation >==========
+
+Pre-requisite
+	2gigs of ram
+	15gigs of storage
+
+Just use virtual box (with 2 gigs of ram and 15 gigs of space)
+
+'cd /opt'
+
+'sudo su'
+
+'sudo yum install -y yum-utils device-mapper-persistent-data lvm2' 	//Install required packages.
+
+'sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo' //Use the following command to set up the stable repository.
+
+	
+'sudo yum install docker-ce docker-ce-cli containerd.io'   //INSTALL DOCKER ENGINE - COMMUNITY
+
+'systemctl start docker'
+
+'docker pull sonatype/nexus3'
+
+'docker run -d -p 8081:8081 --name nexus sonatype/nexus3'
+
+'docker ps'
+
+
+Now go to browser:
+	localhost:8081/nexus
