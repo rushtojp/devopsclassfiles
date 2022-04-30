@@ -33,13 +33,17 @@ https://aws.amazon.com/architecture/
 DevOPS BOOKS
 #############
 
-Devops handbook by Gene Kim
+Devops handbook by Gene Kim - 2nd edition
 
-https://www.amazon.in/DevOps-Handbook-World-Class-Reliability-Organizations-ebook/dp/B09G2GS39R/ref=pd_sbs_sccl_1/260-0972236-0929513?pd_rd_w=yrYSu&pf_rd_p=2cc6ee6d-5e48-4262-84d1-99c2a988deb6&pf_rd_r=XKE7T77QRBFQGACS7AA4&pd_rd_r=801225c6-e975-407d-8bba-0dd089bb26e2&pd_rd_wg=DeR2V&pd_rd_i=B09G2GS39R&psc=1
+https://amzn.to/3OG33uK
 
-https://www.amazon.in/Phoenix-Project-Devops-Helping-Business/dp/1942788290
+Phoenix project
 
-https://www.amazon.in/Unicorn-Project-Developers-Disruption-Thriving/dp/1942788762/ref=pd_sbs_3/261-4074561-2004653?pd_rd_w=lePfs&pf_rd_p=2cc6ee6d-5e48-4262-84d1-99c2a988deb6&pf_rd_r=TK58QEF2Z1DNE7TRAYYZ&pd_rd_r=f4c6360f-5459-4756-9ac6-4c2f422c3479&pd_rd_wg=h4TC1&pd_rd_i=1942788762&psc=1
+https://amzn.to/3vuE2Ly
+
+Unicorn Project 
+
+https://amzn.to/3KujNlt
 
 Cloud resources by AWS, Azure, GCP and Oracle
 
