@@ -1,0 +1,24 @@
+Merge
+
+#Master
+
+step1 - master file - m1
+step2 - test        - t1 t2
+step3 - master -      m2 m3
+
+switch to test
+
+git merge master - m1 t1 t2 m2 m3
+
+
+----------------
+ # rebase
+
+step1 - master file - m1
+step2 - test        - t1 t2
+step3 - master -      m2 m3
+
+switch to test
+
+git rebase master - m1 m2 m3 t1 t2
+
