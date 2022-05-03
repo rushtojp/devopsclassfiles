@@ -73,6 +73,12 @@ Redhat Ansible workshops
 
 https://aap2.demoredhat.com/
 
+############
+Reposweeper 
+
+To clean github repos
+
+https://reposweeper.com/#tools_main
 
 
 
