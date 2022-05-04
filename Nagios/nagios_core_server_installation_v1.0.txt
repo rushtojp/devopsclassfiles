@@ -1,0 +1,192 @@
+Nagios core installation
+
+###########
+Use ubuntu 18.04 LTS version to install
+
+
+Install Pre-requirements for Nagios
+
+first install the following LAMP stack components in your system, 
+
+# apt install apache2 libapache2-mod-php php
+
+ install the following system dependencies and utilities required to compile and install Nagios Core from sources, by issuing the follwoing command.
+
+# apt install wget unzip zip autoconf gcc libc6 make apache2-utils libgd-dev
+
+
+ Install Nagios 4 Core in Ubuntu and Debian
+
+On the first step, create nagios system user and group and add nagios account to the Apache www-data user, by issuing the below commands.
+
+# useradd nagios
+# usermod -a -G nagios www-data
+
+4. After all dependencies, packages and system requirements for compiling Nagios from sources are present in your system, go to Nagios webpage and grab the latest version of Nagios Core stable source archive by issuing the following wget command.
+
+# wget https://assets.nagios.com/downloads/nagioscore/releases/nagios-4.4.6.tar.gz
+5. Next, extract Nagios tarball and enter the extracted nagios directory, with the following commands. Issue ls command to list nagios directory content.
+
+# tar xzf nagios-4.4.6.tar.gz 
+# cd nagios-4.4.6/
+# ls
+Sample Output
+total 600
+-rwxrwxr-x  1 root root    346 Apr 28 20:48 aclocal.m4
+drwxrwxr-x  2 root root   4096 Apr 28 20:48 autoconf-macros
+drwxrwxr-x  2 root root   4096 Apr 28 20:48 base
+drwxrwxr-x  2 root root   4096 Apr 28 20:48 cgi
+-rw-rw-r--  1 root root  32590 Apr 28 20:48 Changelog
+drwxrwxr-x  2 root root   4096 Apr 28 20:48 common
+-rwxrwxr-x  1 root root  43765 Apr 28 20:48 config.guess
+-rwxrwxr-x  1 root root  36345 Apr 28 20:48 config.sub
+-rwxrwxr-x  1 root root 246354 Apr 28 20:48 configure
+-rw-rw-r--  1 root root  29812 Apr 28 20:48 configure.ac
+drwxrwxr-x  5 root root   4096 Apr 28 20:48 contrib
+-rw-rw-r--  1 root root   6291 Apr 28 20:48 CONTRIBUTING.md
+drwxrwxr-x  2 root root   4096 Apr 28 20:48 docs
+-rw-rw-r--  1 root root    886 Apr 28 20:48 doxy.conf
+-rwxrwxr-x  1 root root   7025 Apr 28 20:48 functions
+drwxrwxr-x 11 root root   4096 Apr 28 20:48 html
+drwxrwxr-x  2 root root   4096 Apr 28 20:48 include
+-rwxrwxr-x  1 root root     77 Apr 28 20:48 indent-all.sh
+-rwxrwxr-x  1 root root    161 Apr 28 20:48 indent.sh
+-rw-rw-r--  1 root root    422 Apr 28 20:48 INSTALLING
+...
+6. Now, start to compile Nagios from sources by issuing the below commands. Make sure you configure Nagios with Apache sites-enabled directory configuration by issuing the below command.
+
+# ./configure --with-httpd-conf=/etc/apache2/sites-enabled
+Sample Output
+*** Configuration summary for nagios 4.4.6 2020-04-28 ***:
+
+ General Options:
+ -------------------------
+        Nagios executable:  nagios
+        Nagios user/group:  nagios,nagios
+       Command user/group:  nagios,nagios
+             Event Broker:  yes
+        Install ${prefix}:  /usr/local/nagios
+    Install ${includedir}:  /usr/local/nagios/include/nagios
+                Lock file:  /run/nagios.lock
+   Check result directory:  /usr/local/nagios/var/spool/checkresults
+           Init directory:  /lib/systemd/system
+  Apache conf.d directory:  /etc/apache2/sites-enabled
+             Mail program:  /bin/mail
+                  Host OS:  linux-gnu
+          IOBroker Method:  epoll
+
+ Web Interface Options:
+ ------------------------
+                 HTML URL:  http://localhost/nagios/
+                  CGI URL:  http://localhost/nagios/cgi-bin/
+ Traceroute (used by WAP):  
+
+
+Review the options above for accuracy.  If they look okay,
+type 'make all' to compile the main program and CGIs.
+7. In the next step, build Nagios files by issuing the following command.
+
+# make all
+8. Now, install Nagios binary files, CGI scripts and HTML files by issuing the following command.
+
+# make install
+9. Next, install Nagios daemon init and external command mode configuration files and make sure you enable nagios daemon system-wide by issuing the following commands.
+
+# make install-init
+# make install-commandmode
+# systemctl enable nagios.service
+10. Next, run the following command in order to install some Nagios sample configuration files needed by Nagios to run properly by issuing the below command.
+
+# make install-config
+11. Also, install Nagios configuration file for Apacahe web server, which can be fount in /etc/apacahe2/sites-enabled/ directory, by executing the below command.
+
+# make install-webconf
+12. Next, create nagiosadmin account and a password for this account necessary by Apache server to log in to Nagios web panel by issuing the following command.
+
+# htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
+13. To allow Apache HTTP server to execute Nagios cgi scripts and to access Nagios admin panel via HTTP, first enable cgi module in Apache and then restart Apache service and start and enable Nagios daemon system-wide by issuing the following commands.
+
+# a2enmod cgi
+# systemctl restart apache2
+# systemctl start nagios
+# systemctl enable nagios
+
+for azure, Open port no 80 and 443 to access nagios web console
+
+14. Finally, log in to Nagios Web Interface by pointing a browser to your server’s IP address or domain name at the following URL address via HTTP protocol. Log in to Nagios with nagiosadmin user the password setup with htpasswd script.
+
+http://IP-Address/nagios
+OR
+http://DOMAIN/nagios
+
+15. To view your hosts status, navigate to Current Status -> Hosts menu where you will notice that some errors are displayed for localhost host, as illustrated in the below screenshot. The error appears because Nagios has no plugins installed to check hosts and services status.
+
+
+Install Nagios Plugins in Ubuntu 
+
+
+16. To compile and install Nagios Plugins from sources in Debian or Ubuntu, at the first stage, install the following dependencies in your system, by issuing the below command.
+
+
+for the dependancies installation use the following step
+
+sudo apt-get update
+
+sudo apt-get install wget build-essential unzip openssl libssl-dev
+
+sudo apt-get install apache2 php libapache2-mod-php php-gd libgd-dev
+
+17. Next, visit Nagios Plugins repositories page and download the latest source code tarball by issuing the following command.
+
+# wget https://github.com/nagios-plugins/nagios-plugins/archive/release-2.3.3.tar.gz 
+18. Go ahead and extract the Nagios Plugins source code tarball and change path to the extracted nagios-plugins directory by executing the following commands.
+
+# tar xfz release-2.3.3.tar.gz 
+# cd nagios-plugins-release-2.3.3/
+19. Now, start to compile and install Nagios Plugins from sources, by executing the following series of commands in your server console.
+
+# ./tools/setup 
+# ./configure 
+# make
+# make install
+20. The compiled and installed Nagios plugins can be located in /usr/local/nagios/libexec/ directory. List this directory to view all available plugins in your system.
+
+# ls /usr/local/nagios/libexec/
+Nagios Plugins Directory
+Nagios Plugins Directory
+21. Finally, restart Nagios daemon in order to apply the installed plugins, by issuing the below command.
+
+# systemctl restart nagios.service
+22. Next, log in to Nagios web panel and go to Current Status -> Services menu and you should notice all hosts services are checked now by Nagios plugins.
+
+From the color code you should see the current services status: green color is for OK status, yellow for Warning and red for Critical status.
+
+Check Host Services
+Check Host Services
+23. Finally, to access Nagios admin web interface via HTTPS protocol, issue the following commands to enable Apache SSL configurations and restart the Apache daemon to reflect changes.
+
+# a2enmod ssl 
+# a2ensite default-ssl.conf
+# systemctl restart apache2
+# sudo a2enmod rewrite
+24. After you’ve enabled Apache SSL configurations, open /etc/apache2/sites-enabled/000-default.conf file for editing and add the following block of code after DocumentRoot statement as shown in the below excerpt.
+
+
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{23.102.116.33}/$1 [R,L]
+
+Configure Apache for Nagios
+Configure Apache for Nagios
+25. You need to restart Apache daemon to apply the configured rules, by issuing the below command.
+
+# systemctl restart apache2.service 
+26. Finally, refresh the browser in order to be redirected to Nagios admin panel via HTTPS protocol. Accept the wanting message that gets displayed in the browser and log in to Nagios again with the your credentials.
+
+Nagios HTTPS Dashboard
+Nagios HTTPS Dashboard
+Congratulations! You have successfully install and configured Nagios Core monitoring system from sources in Ubuntu server or Debian.
+
+Reference: https://www.tecmint.com/install-nagios-core-in-ubuntu-and-debian/
+
+
