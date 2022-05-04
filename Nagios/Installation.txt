@@ -1,0 +1,19 @@
+Installation steps
+
+
+https://www.tecmint.com/install-nagios-core-in-ubuntu-and-debian/
+
+
+Open port no 80 and 443 to access nagios web console
+
+For NRPE installation pls use the following dependencies
+
+for the dependancies installation use the following step
+
+sudo apt-get update
+
+sudo apt-get install wget build-essential unzip openssl libssl-dev
+
+sudo apt-get install apache2 php libapache2-mod-php php-gd libgd-dev
+
+
