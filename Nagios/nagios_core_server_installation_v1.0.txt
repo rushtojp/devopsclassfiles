@@ -171,7 +171,7 @@ Check Host Services
 # sudo a2enmod rewrite
 24. After you’ve enabled Apache SSL configurations, open /etc/apache2/sites-enabled/000-default.conf file for editing and add the following block of code after DocumentRoot statement as shown in the below excerpt.
 
-
+sudo a2enmod rewrite
 RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule (.*) https://%{23.102.116.33}/$1 [R,L]
@@ -186,6 +186,26 @@ Configure Apache for Nagios
 Nagios HTTPS Dashboard
 Nagios HTTPS Dashboard
 Congratulations! You have successfully install and configured Nagios Core monitoring system from sources in Ubuntu server or Debian.
+
+
+
+##########
+root@nagios-sog-4may:~# cd /usr/local/nagios/etc/objects
+root@nagios-sog-4may:/usr/local/nagios/etc/objects# ls
+commands.cfg  host1.cfg  localhost.cfg  switch.cfg     timeperiods.cfg
+contacts.cfg  host2.cfg  printer.cfg    templates.cfg  windows.cfg
+root@nagios-sog-4may:/usr/local/nagios/etc/objects#
+
+#############
+
+define service {
+
+    use                     local-service           ; Name of service template to use
+    host_name               localhost
+    service_description     PING
+    check_command           check_ping!100.0,20%!500.0,60%
+}
+
 
 Reference: https://www.tecmint.com/install-nagios-core-in-ubuntu-and-debian/
 

@@ -1,0 +1,87 @@
+Slave/Client
+
+1. sudo apt-get update
+
+2. sudo apt-get install nagios-nrpe-server nagios-plugins
+
+3. Open the configuration file as shown below:
+
+sudo vim /etc/nagios/nrpe.cfg
+
+Find the below given line and in place of XXX add your master IP
+allowed_hosts=127.0.0.1,<nagios-core-public-ip-address>
+
+
+4.  Start NRPE service as shown below
+
+# sudo /etc/init.d/nagios-nrpe-server restart
+
+
+################
+
+Install check_nrpe on Master
+
+#################
+#sudo apt-get update
+
+Install following package
+
+# sudo apt-get install -y autoconf automake gcc libc6 libmcrypt-dev
+
+cd /tmp
+
+wget --no-check-certificate -O nrpe.tar.gz https://github.com/NagiosEnterprises/nrpe/releases/download/nrpe-3.2.1/nrpe-3.2.1.tar.gz
+
+
+untar the file : tar xvf <tar-file-name>
+
+root@nagios-sog-4may:/tmp# tar -xvf nrpe.tar.gz
+
+then execute the following command 
+
+root@nagios-sog-4may:/tmp/nrpe-3.2.1#
+
+cd /tmp/nrpe-nrpe-3.2.1$ ./configure
+
+
+
+#make check_nrpe
+
+# sudo make install-plugin
+
+# /usr/local/nagios/libexec/check_nrpe -H <ip address of server> NRPE v3.2.1
+
+
+# /usr/local/nagios/libexec/check_nrpe -H 20.57.118.31 NRPE v3.2.1
+
+
+# /usr/local/nagios/libexec/check_nrpe -H 20.242.92.51 NRPE v3.2.1
+
+
+Make a configuration file as shown
+
+sudo vim /usr/local/nagios/etc/servers/host1.cfg
+
+
+<add the host configuration content>
+
+verify the configuration again
+
+sudo /usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
+
+sudo service nagios restart
+
+
+
+
+
+
+
+
+
+
+
++919566515622
+
+
+
