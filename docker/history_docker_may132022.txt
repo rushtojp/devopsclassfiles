@@ -1,0 +1,111 @@
+root@may12-docker-demo:~# history
+    1  clear
+    2  sudo apt-get update
+    3  sudo apt-get install curl apt-transport-https ca-certificates software-properties-common -y
+    4  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+    5  sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+    6  sudo apt-get update
+    7  sudo apt-get install -y docker-ce
+    8  service docker status
+    9  docker compose
+   10  sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+   11  sudo chmod +x /usr/local/bin/docker-compose
+   12  docker-compose --version
+   13  clear
+   14  docker ps
+   15  docker ps -A
+   16  docker ps -a
+   17  docker images
+   18  clear
+   19  docker pull hello-world
+   20  docker images
+   21  docker ps -a
+   22  docker run hello-world
+   23  docker ps
+   24  docker ps -a
+   25  clear
+   26  docker images
+   27  docker run hello-world
+   28  docker ps -a
+   29  clear
+   30  docker ps
+   31  docker ps -a
+   32  docker images
+   33  docker run hello-world
+   34  docker images -a
+   35  clear
+   36  docker run -it ubuntu bash
+   37  hostname
+   38  docker ps -a
+   39  docker run -dt ubuntu bash
+   40  docker ps
+   41  docker exec -it d0828de bash
+   42  docker ps
+   43  docker ps -a
+   44  docker start 94db652b2c
+   45  docker ps
+   46  clear
+   47  docker images
+   48  docker ps -a
+   49  docker run --name myubuntu -dt ubuntu bash
+   50  docker ps -a
+   51  docker exec -it 7f024aa119 bash
+   52  docker images
+   53  docker ps -a
+   54  clear
+   55  docker pull jenkins/jenkins:lts
+   56  docker images
+   57  docker run -p 9999:8080 -dt jenkins/jenkins:ltsbash
+   58  docker run -p 9999:8080 -dt jenkins/jenkins:lts bash
+   59  docker ps
+   60  curl ifconfig.co
+   61  docker ps -a
+   62  docker run -p 9999:8080 -dt jenkins/jenkins:lts bash
+   63  clear
+   64  docker run -p 9999:8080 -dt jenkins/jenkins
+   65  docker run -p 9998:8080 -dt jenkins/jenkins
+   66  docker ps -a
+   67  clear
+   68  docker ps
+   69  docker exec -it bdc0fc bash
+   70  docker logs
+   71  ls
+   72  docker ps
+   73  docker logs bdc0fc4e0df
+   74  clear
+   75  docker images
+   76  clear
+   77  pwd
+   78  clear
+   79  docker ps
+   80  docker exec -it 7f024aa11 bash
+   81  docker commit myubuntu coachjp/ubuntu-apachemay13:v1
+   82  docker push
+   83  docker push coachjp/ubuntu-apachemay13:v1
+   84  docker login
+   85  docker push coachjp/ubuntu-apachemay13:v1
+   86  docker run --name myubuntu3 ubuntu bash
+   87  docker ps -a
+   88  clear
+   89  docker images
+   90  docker pull jenkins:2.60.1
+   91  docker images
+   92  clear
+   93  docker ps -a
+   94  docker images
+   95  docker rmi hello-world
+   96  docker rm f6d9f0a d06998c0 436e12
+   97  docker ps -a
+   98  clear
+   99  docker images -a
+  100  docker rmi hello-world
+  101  docker images -a
+  102  clear
+  103  docker ps -a
+  104  docker rm 94db652b2c
+  105  docker stop 94db652b2c
+  106* docker rm ps -a
+  107  docker rm 94db652b2c
+  108  clear
+  109  history
+root@may12-docker-demo:~#
