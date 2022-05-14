@@ -144,6 +144,25 @@ output {
 }
 
 
+
+service logstash restart
+
+Goto kibana dashboard -> D -> manage spaces - kibana -> Index management should have the entry for "crimes_2001.csv" after some time.
+Goto kibana dashboard -> D -> manage spaces - kibana - index patterns - create index pattern -crime* - @timestamp
+
+Discover -> change index pattern -> crime*
+
+#filter
+
+Click on arrest -> visualize -> save (Arrest data for last week) -> save on dashboard
+save dashboard as "Crime Dashboard"
+Goto dashboard and verify
+
+Create visualization -> community area -> visualize -> Pie graph - save and return -> Title : "Comminity wise crime in last week"
+Search -> select fields - Date Domestic District Description -> Save -> Domestic telephone threats for lst week. (can be checked from open option from top right side)
+
+
+
 ############
 
 Restart Procedure after the services are shutdown
@@ -164,18 +183,4 @@ After sometime reboot nginx server as well.
 nginx - service nginx start
 
 ------------------------------------------------------------------
-service logstash restart
 
-Goto kibana dashboard -> D -> manage spaces - kibana -> Index management should have the entry for "crimes_2001.csv" after some time.
-Goto kibana dashboard -> D -> manage spaces - kibana - index patterns - create index pattern -crime* - @timestamp
-
-Discover -> change index pattern -> crime*
-
-#filter
-
-Click on arrest -> visualize -> save (Arrest data for last week) -> save on dashboard
-save dashboard as "Crime Dashboard"
-Goto dashboard and verify
-
-Create visualization -> community area -> visualize -> Pie graph - save and return -> Title : "Comminity wise crime in last week"
-Search -> select fields - Date Domestic District Description -> Save -> Domestic telephone threats for lst week. (can be checked from open option from top right side)
