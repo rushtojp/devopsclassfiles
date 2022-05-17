@@ -80,6 +80,12 @@ To clean github repos
 
 https://reposweeper.com/#tools_main
 
+Docker compose examples
+
+https://github.com/docker/awesome-compose/
+
+
+
 
 
 
