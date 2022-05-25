@@ -17,8 +17,5 @@ pls copy the public key to the client machines profiles
 
 copy the public key from id_rsa.pub from Jenkins master to the /home/<username>/.ssh/authorized_keys file
 
-For AWS Machines
-
-ssh-add ~/.ssh/ec2-keypair (Alternate command if ssh-copy-id  doesn't work on AWS servers
 
 
