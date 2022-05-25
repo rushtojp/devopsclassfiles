@@ -6,3 +6,14 @@ sudo apt-add-repository --yes --update ppa:ansible/ansible
 sudo apt install ansible -y
 
 ansible --version
+
+##############
+
+for aws and azure machines
+
+ssh-copy-id may not work..
+
+pls copy the public key to the client machines profiles
+
+copy the public key from id_rsa.pub from Jenkins master to the /home/vagrant/.ssh/authorized_keys file
+
