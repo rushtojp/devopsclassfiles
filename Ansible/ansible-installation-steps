@@ -15,5 +15,5 @@ ssh-copy-id may not work..
 
 pls copy the public key to the client machines profiles
 
-copy the public key from id_rsa.pub from Jenkins master to the /home/vagrant/.ssh/authorized_keys file
+copy the public key from id_rsa.pub from Jenkins master to the /home/<username>/.ssh/authorized_keys file
 
