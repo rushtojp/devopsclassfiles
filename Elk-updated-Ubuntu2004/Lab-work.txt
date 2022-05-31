@@ -1,0 +1,99 @@
+Lab work
+--------
+
+Example-1 : sample data
+	Manage spaces -> Kibana -> Index patterns -> Add sample data -> sample flight data -> view data -> dashboard
+
+Example-2 : upload csv file	
+
+	wget https://raw.githubusercontent.com/PacktPublishing/Kibana-7-Quick-Start-Guide/master/Chapter02/crimes_2001.csv
+	
+	root@elk:~# cp crimes_2001.csv /home/vagrant/
+
+
+        vi /etc/logstash/conf.d/crimes.conf
+
+# Logstash configuration file to read CSV data. Add Elasticsearch username and password if you have configured the security.
+input {
+	file {
+		path => "/home/vagrant/crimes_2001.csv"
+		start_position => beginning
+	}
+}
+filter {
+	csv {
+		columns => [
+			"ID",
+			"Case Number",
+			"Date",
+			"Block",
+			"IUCR",
+			"Primary Type",
+			"Description",
+			"Location Description",
+			"Arrest",
+			"Domestic",
+			"Beat",
+			"District",
+			"Ward",
+			"Community Area",
+			"FBI Code",
+			"X Coordinate",
+			"Y Coordinate",
+			"Year",
+			"Updated On",
+			"Latitude",
+			"Longitude",
+			"Location"
+		]
+		separator => ","
+	}
+}
+output {
+	elasticsearch {
+		action => "index"
+		hosts => ["127.0.0.1:9200"]
+		index => "crimes"
+	}
+}
+
+
+
+service logstash restart
+
+Goto kibana dashboard -> D -> manage spaces - kibana -> Index management should have the entry for "crimes_2001.csv" after some time.
+Goto kibana dashboard -> D -> manage spaces - kibana - index patterns - create index pattern -crime* - @timestamp
+
+Discover -> change index pattern -> crime*
+
+#filter
+
+Click on arrest -> visualize -> save (Arrest data for last week) -> save on dashboard
+save dashboard as "Crime Dashboard"
+Goto dashboard and verify
+
+Create visualization -> community area -> visualize -> Pie graph - save and return -> Title : "Comminity wise crime in last week"
+Search -> select fields - Date Domestic District Description -> Save -> Domestic telephone threats for lst week. (can be checked from open option from top right side)
+
+
+
+############
+
+Restart Procedure after the services are shutdown
+Graceful shutdown procedure
+
+stop logstash
+stop kibana
+stop elasticsearch
+
+Reboot order
+
+Start Elasticache - service elasticsearch start
+Start Logstash - service logstash start
+Start Kibana -service kibana start
+
+After sometime reboot nginx server as well.
+
+nginx - service nginx start
+
+------------------------------------------------------------------
