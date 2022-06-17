@@ -1,0 +1,28 @@
+Dockerfile figlet:v1
+############
+
+FROM ubuntu
+RUN apt-get update
+RUN ["apt-get" , "install" , "figlet"]
+CMD ["figlet", "-f" , "script" , "hello" ]
+
+vim Dockerfile
+
+command to create image from dockerfile
+#############
+docker build -t figlet:v1 .
+
+
+
+
+
+with entrypoint
+##############
+
+FROM ubuntu
+RUN apt-get update
+RUN ["apt-get" , "install" , "figlet"]
+ENTRYPOINT ["figlet", "-f" , "script" ]
+CMD [”hello”]
+
+docker build -t figlet:v2 .
