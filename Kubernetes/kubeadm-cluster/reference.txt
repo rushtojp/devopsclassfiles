@@ -4,3 +4,13 @@ https://www.gremlin.com/community/tutorials/how-to-create-a-kubernetes-cluster-o
 To make the status ready on the cluster
 
 kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
+
+
+Enabling K8S Dashboard
+
+kubectl apply -f https://gist.githubusercontent.com/initcron/32ff89394c881414ea7ef7f4d3a1d499/raw/4863613585d05f9360321c7141cc32b8aa305605/kube-dashboard.yaml
+
+Expose the dashboard
+
+kubectl describe svc kubernetes-dashboard -n kube-system
+
