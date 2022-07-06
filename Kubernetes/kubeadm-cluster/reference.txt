@@ -1,5 +1,8 @@
 https://www.gremlin.com/community/tutorials/how-to-create-a-kubernetes-cluster-on-ubuntu-16-04-with-kubeadm-and-weave-net/
 
+Microservices demo using weave socks
+
+https://microservices-demo.github.io/docs/quickstart.html
 
 To make the status ready on the cluster
 
