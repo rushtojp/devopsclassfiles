@@ -8,6 +8,10 @@ To make the status ready on the cluster
 
 kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
 
+location of complete-demo.yml file
+
+/home/ubuntu/microservices-demo/deploy/kubernetes/complete-demo.yaml
+
 
 Enabling K8S Dashboard
 
