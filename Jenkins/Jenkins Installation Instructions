@@ -1,3 +1,13 @@
+#######################
+
+This is old version. pls do not use unless needed
+
+Please use this. https://github.com/rushtojp/devopsclassfiles/blob/master/Jenkins/Jenkins-Installation-debian-July2022.txt
+
+
+######################
+
+
 # Steps to install Jenkins at ubuntu 18.04
 
 sudo apt-get update
