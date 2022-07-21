@@ -24,6 +24,15 @@ Azure Architecture Center
 
 https://docs.microsoft.com/en-us/azure/architecture/
 
+AZURE PRICING/COST CALCULATOR
+##################
+https://azure.microsoft.com/en-in/pricing/calculator/
+
+AWS vs Azure comparison
+
+#########
+https://docs.microsoft.com/en-us/azure/architecture/aws-professional/services
+
 
 AWS Architecture Center
 ##########################
