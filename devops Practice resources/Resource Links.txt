@@ -31,6 +31,9 @@ AWS vs Azure comparison
 #########
 https://docs.microsoft.com/en-us/azure/architecture/aws-professional/services
 
+AWS Knowledge Center Videos
+
+https://www.youtube.com/playlist?list=PLhr1KZpdzukfdjsOHZ-BazZt1iK1J8UUw
 
 AWS Architecture Center
 ##########################
