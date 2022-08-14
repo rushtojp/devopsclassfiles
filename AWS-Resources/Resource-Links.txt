@@ -1,3 +1,7 @@
 EC2 Instance Types - documentation
 
 https://aws.amazon.com/ec2/instance-types/
+
+Free tier - Maximum limits of free resources
+
+https://aws.amazon.com/free/
