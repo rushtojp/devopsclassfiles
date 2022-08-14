@@ -5,3 +5,7 @@ https://aws.amazon.com/ec2/instance-types/
 Free tier - Maximum limits of free resources
 
 https://aws.amazon.com/free/
+
+Connecting to EC2 Instances using Putty
+
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html
