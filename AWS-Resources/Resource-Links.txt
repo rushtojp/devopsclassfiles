@@ -9,3 +9,7 @@ https://aws.amazon.com/free/
 Connecting to EC2 Instances using Putty
 
 https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html
+
+Instances built using Nitro System - for EBS multi attach volumes
+
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances
