@@ -1,2 +1,7 @@
 https://itsfoss.com/set-java-home-ubuntu/
 
+
+Javac Installation
+
+apt install openjdk-11-jdk-headless
+
