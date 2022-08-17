@@ -65,6 +65,13 @@ Cloud resources by AWS, Azure, GCP and Oracle
 
 pls visit their respective sites for free credits
 
+
+AWS BUilder's library
+
+####################
+
+https://aws.amazon.com/builders-library/
+
 Azure Devops Demo Generator
 ##############################
 
