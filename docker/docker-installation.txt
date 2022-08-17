@@ -15,3 +15,9 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-
 
 sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
+
+_________
+
+How to create AWS Ubuntu instance!
+
+https://www.cloudbooklet.com/create-an-ec2-instance-on-aws-with-ubuntu-18-04/
