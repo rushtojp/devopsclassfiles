@@ -1,0 +1,500 @@
+  259  git log --oneline
+  260  git checkout test
+  261  git log --oneline
+  262  git merge master
+  263  git log --oneline
+  264  cd c:
+  265  clear
+  266  mkdir aug9rebasedemo
+  267  cd aug9rebasedemo/
+  268  git status
+  269  git init
+  270  echo this is masterfile >> masterfile.txt
+  271  git status
+  272  git add .
+  273  git commit -m "m1" masterfile.txt 
+  274  clear
+  275  git checkout -b test
+  276  echo test file created >> testfile.txt
+  277  git status
+  278  git add .
+  279  git commit -m "t1" testfile.txt 
+  280  echo few more lines of code >> testfile.txt 
+  281  git add .
+  282  git commit -m "t2" testfile.txt 
+  283  git log --oneline
+  284  git status
+  285  git checkout master
+  286  ls
+  287  echo few lines of code >> masterfile.txt 
+  288  git status
+  289  git add .
+  290  git commit -m "m2" masterfile.txt 
+  291  git status
+  292  echo few more lines of code >> masterfile.txt 
+  293  git status
+  294  git add .
+  295  git commit -m "m3" masterfile.txt 
+  296  git checkout test
+  297  git log --oneline
+  298  git rebase master
+  299  git log --oneline
+  300  cd c:
+  301  mkdir aug9gitstash
+  302  cd aug9gitstash/
+  303  echo git stash demo >> gitstashfile.txt
+  304  git status
+  305  git init
+  306  git status
+  307  git add gitstashfile.txt 
+  308  git status
+  309  git stash
+  310  git stash gitstashfile.txt
+  311  git stash save firststash
+  312  git commit -m "git stash demo" .
+  313  echo additional changes to feature1 >> gitstashfile.txt 
+  314  git status
+  315  git stash 
+  316  git log --oneline
+  317  git status
+  318  git status
+  319  git stash 
+  320  git stash pop
+  321  git status
+  322  echo 2nd file for stash demo >> gitstashsecondfile.txt
+  323  git status
+  324  git stash save stashdemo1
+  325  git status
+  326  git stash --help
+  327  git stash list
+  328  git status
+  329  git stash save secondfileadded
+  330  git status
+  331  git add .
+  332  git stash save secondfileadded
+  333  git stash list
+  334  git stash pop stash@{0}
+  335  git status
+  336  git stash save secondfileadded
+  337  git status
+  338  git stash list
+  339  git status
+  340  git status
+  341  echo feature1 udpates > feature1.txt
+  342  git status
+  343  git add .
+  344  echo "few lines of code" >> feature1.txt 
+  345  git status
+  346  git stash save featur1stash
+  347  git status
+  348  echo "feature2 create" >> feature2.txt
+  349  git status
+  350  git add .
+  351  git status
+  352  git commit -m "work completed" feature2.txt 
+  353  git status
+  354  git stash list
+  355  git stash pop featur1stash
+  356  git stash pop stash@{0}
+  357  git status
+  358  git stash list
+  359  git stash pop stash@{0}
+  360  git status
+  361  touch gitstashuntracked.txt 
+  362  git status
+  363  git stash -u 
+  364  git stash list
+  365  git stash pop 
+  366  git stash list
+  367  git stash pop stash@{0}
+  368  git stash list
+  369  clear
+  370  cd c:
+  371  mkdir gitflowinitdemo
+  372  cd gitflowinitdemo/
+  373  clear
+  374  git status
+  375  git flow init
+  376  git status
+  377  git branch
+  378  git flow feature start feature_branch
+  379  git status
+  380  git branch
+  381  echo some lines of code >> feature_feature_branchdemo.txt
+  382  git status
+  383  git add feature_feature_branchdemo.txt 
+  384  git commit -m "feature branch added" .
+  385  git status
+  386  git flow feature finish feature_branch
+  387  git status
+  388  git branch
+  389  ls
+  390  clear
+  391  git flow release start 0.1.0
+  392  git branch
+  393  ls
+  394  echo "updates done at release branch" >> feature_feature_branchdemo.txt 
+  395  git status
+  396  git add .
+  397  git commit -m "changes done in release" .
+  398  git status
+  399  git flow release finish '0.1.0'
+  400  git status
+  401  git branch
+  402  ls
+  403  git checkout master
+  404  ls
+  405  git tag
+  406  git flow hotfix start hotfix_branch
+  407  git branch
+  408  ls
+  409  git status
+  410  ls
+  411  echo "some hotfix updates" >> feature_feature_branchdemo.txt
+  412  git status
+  413  git add .
+  414  git commit -m "hotfix done" feature_feature_branchdemo.txt
+  415  git flow hotfix finish hotfix_branch
+  416  history
+  417  exit
+  418  pwd
+  419  cd c:
+  420  clear
+  421  mkdir sogaug9gitdemo
+  422  cd sogaug9gitdemo/
+  423  git status
+  424  git init
+  425  pwd
+  426  ls
+  427  ls -al
+  428  clear
+  429  ls
+  430  git status
+  431  echo some lines of code >> sog123.yaml
+  432  git status
+  433  git add .
+  434  git status
+  435  git commit -m "sog123 file added" sog123.yaml 
+  436  git status
+  437  git remote -v
+  438  git remote add origin https://github.com/rushtojp/sogaug9th.git
+  439  git remote -v
+  440  git branch -M master
+  441  git push -u origin master
+  442  ls
+  443  echo few more lines of code >> sog123.yaml
+  444  cat sog123.yaml 
+  445  git status
+  446  git add sog123.yaml
+  447  git status
+  448  git commit -m "modifications done" .
+  449  git status
+  450  git log
+  451  git push
+  452  git log --oneline
+  453  git status
+  454  git fetch
+  455  git log --oneline
+  456  git pull
+  457  git status
+  458  git log --oneline
+  459  pwd
+  460  ls
+  461  vim sog123.yaml
+  462  git status
+  463  git add .
+  464  git commit -m sog123.yaml .
+  465  git status
+  466  git push
+  467  git log --oneline
+  468  vim sog123.yaml 
+  469  git status
+  470  git add .
+  471  git status
+  472  git commit -m "changes done by git user change3" .
+  473  git push
+  474  git pull
+  475  ls
+  476  vim sog123.yaml 
+  477  git status
+  478  git add .
+  479  git commit -m "merge conflict resolved"
+  480  git status
+  481  git push
+  482  cd c:
+  483  mkdir gitclonedemo
+  484  mkdir soggitclonedemo
+  485  cd soggitclonedemo/
+  486  git clone https://github.com/rushtojp/git-cheat-sheet-jpscopy.git
+  487  ls 
+  488  ls -al
+  489  cd git-cheat-sheet-jpscopy/
+  490  ls
+  491  git clone https://github.com/GoogleCloudPlatform/solutions-terraform-jenkins-gitops.git
+  492  ls
+  493  clear
+  494  git branch
+  495  git branch feature1
+  496  git branch
+  497  git checkout feature1
+  498  git status
+  499  ls -al
+  500  exit
+  501  pwd
+  502  git status
+  503  clear
+  504  pwd
+  505  cd ..
+  506  cd ..
+  507  clear
+  508  mkdir sog22augdemo
+  509  cd sog22augdemo/
+  510  pwd
+  511  git --version
+  512  git status
+  513  git init
+  514  ls -al
+  515  ls -l
+  516  ls -al
+  517  cd .git
+  518  pwd
+  519  ls -al
+  520  start .
+  521  cd ..
+  522  pwd
+  523  clear
+  524  ls
+  525  ls -al
+  526  echo "few lines of code" > newprogram.yaml
+  527  cat newprogram.yaml 
+  528  git status
+  529  git add newprogram.yaml
+  530  git status
+  531  clear
+  532  git statsu
+  533  git status
+  534  git rm --cached newprogram.yaml
+  535  git status
+  536  clear
+  537  git status
+  538  echo "2nd program file" >> newprogram2.yaml
+  539  git status
+  540  git add newprogram.yaml
+  541  git status
+  542  git rm --cached newprogram.yaml
+  543  git status
+  544  clear
+  545  git status
+  546  git add .
+  547  git status
+  548  clear
+  549  git status
+  550  git commit -m "adding newprogram.yaml" newprogram.yaml
+  551  git status
+  552  git log
+  553  git status
+  554  git commit -m "adding newprogram2.yaml" .
+  555  git status
+  556  clear
+  557  git log 
+  558  git status
+  559  clear
+  560  ls
+  561  echo "this is my 3rd program with some updates" >> newprogram3.yaml
+  562  git status
+  563  git add newprogram3.yaml 
+  564  clear
+  565  git status
+  566  git commit -m "3rd program file added" .
+  567  git log
+  568  clear
+  569  git status
+  570  ls
+  571  vim newprogram.yaml 
+  572  git status
+  573  git restore newprogram.yaml
+  574  git status
+  575  ls
+  576  cat newprogram.yaml 
+  577  clear
+  578  ls
+  579  vim newprogram.yaml
+  580  git status
+  581  cat newprogram.yaml
+  582  git restore newprogram.yaml
+  583  cat newprogram.yaml
+  584  clear
+  585  vim newprogram.yaml
+  586  git status
+  587  git add newprogram.yaml
+  588  git status
+  589  git commit -m "new lines of code added" .
+  590  git status
+  591  clear
+  592  git status
+  593  git log
+  594  git log --oneline
+  595  clear
+  596  git config --global list
+  597  git config --global -list
+  598  git config --global --list
+  599  pwd
+  600  cd ..
+  601  mkdir sog22augdemo2
+  602  cd sog22augdemo2
+  603  git status
+  604  git init
+  605  start .
+  606  clear
+  607  echo "new testprogram" >  testprogram.yaml
+  608  cat testprogram.yaml 
+  609  git status
+  610  git add testprogram.yaml 
+  611  clear
+  612  git status
+  613  git commit -m "testprogram added" .
+  614  git status
+  615  clear
+  616  git log
+  617  ls
+  618  cat testprogram.yaml 
+  619  history
+  620  history > history_for_print.txt
+  621  ls
+  622  git log --oneline
+  623  ls
+  624  clear
+  625  pwd
+  626  cd ..
+  627  cd sog22augdemo
+  628  pwd
+  629  clear
+  630  git status
+  631  git log --oneline
+  632  git remote add origin https://github.com/rushtojp/sog22augdemo.git
+  633  git branch -M master
+  634  git push -u origin master
+  635  git log --oneline
+  636  git remote -v
+  637  ls
+  638  vim newprogram.yaml
+  639  git status
+  640  git add .
+  641  clear
+  642  git status
+  643  git commit -m "new modification" .
+  644  git status
+  645  git push
+  646  git log --oneline
+  647  git log
+  648  clear
+  649  pwd
+  650  start .
+  651  pwd
+  652  cd c:
+  653  mkdir gitclonedemosogaug22
+  654  cd gitclonedemosogaug22
+  655  pwd
+  656  clear
+  657  git clone https://github.com/rushtojp/addressbook-1.git
+  658  pwdl
+  659  pwd
+  660  ls -al
+  661  cd addressbook-1/
+  662  ls -al
+  663  pwd
+  664  cd ..
+  665  cd ..
+  666  cd gitclonedemosogaug22/
+  667  clear
+  668  git remote -v
+  669  cd ..
+  670  cd sog
+  671  cd sog22augdemo
+  672  pwd
+  673  clear
+  674  git remote -v
+  675  git log --oneline
+  676  git fetch 
+  677  git diff  7744b78 2434510
+  678  cat newprogram.yaml
+  679  git pull 
+  680  cat newprogram.yaml
+  681  ls
+  682  cat newprogram.yaml
+  683  git diff --help
+  684  git fetch --help
+  685  clear
+  686  git status
+  687  clear
+  688  git status
+  689  git branch
+  690  git branch feature1
+  691  git branch
+  692  git status
+  693  git checkout feature1 e1
+  694  clear
+  695  git checkout feature1
+  696  git status
+  697  git push -u origin feature1
+  698  git status
+  699  git status
+  700  clear
+  701  echo new code in feature1 > code1feature1.yaml
+  702  cat code1feature1.yaml 
+  703  git status
+  704  git add .
+  705  clear
+  706  git commit -m "code1 of feature1 added" .
+  707  git status
+  708  git log 
+  709  git push -u origin feature1
+  710  git checkout master
+  711  git log
+  712  git status
+  713  git log --oneline
+  714  git pull -u origin master
+  715  clear
+  716  git pull
+  717  git log 
+  718  clear
+  719  git log --oneline
+  720  git status
+  721  ls
+  722  git status
+  723  git branch
+  724  git checkout feature1
+  725  ls
+  726  ls
+  727  clear
+  728  git checkout -b feature2
+  729  git status
+  730  echo this is code for feature2 > code1feature2.yaml
+  731  cat code1feature2.yaml
+  732  git status
+  733  git add .
+  734  git commit -m "code2 feature1 added locally" .
+  735  git status
+  736  ls
+  737  git checkout master
+  738  ls
+  739  ls
+  740  git status
+  741  clear
+  742  git status
+  743  git merge feature2
+  744  ls
+  745  git push -u origin master
+  746  git status
+  747  git status
+  748  git checkout -b feature3
+  749  git push -u origin feature3
+  750  git status
+  751  echo "new code added to feature3" > code1feature3.yaml
+  752  git status
+  753  git push -u origin feature3
+  754  git status
+  755  git add .
+  756  git commit -m "code1 in feature3 added" .
+  757  git push -u origin feature3
+  758  history > history_22nd_aug_2ndhalf.txt
