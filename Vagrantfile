@@ -1,13 +1,15 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+ENV['VAGRANT_DEFAULT_PROVIDER'] = 'virtualbox'
+
 Vagrant.configure("2") do |config|
-  config.vm.define "v", primary: true do |v|
-    v.vm.box = "bento/ubuntu-18.04"
-    v.vm.hostname = 'ansible-node2'
-    v.vm.network :private_network, ip: "192.168.56.153"    
-	
-	v.vm.provider :virtualbox do |v|
-	  v.customize ["modifyvm", :id, "--name", "ansible-node2"]
-	  v.customize ["modifyvm", :id, "--memory", 1024]
-	  v.customize ["modifyvm", :id, "--cpus", 1]
-    end	 
- end
+  ##### DEFINE VM #####
+  config.vm.define "dockervm-sog-ubuntu-aug23" do |config|
+  config.vm.hostname = "dockervm-sog-ubuntu-aug23"
+  config.vm.box = "bento/ubuntu-18.04"
+  config.vm.box_check_update = false
+  config.vm.network "private_network", ip: "192.168.56.59"
+  
+  end
 end
