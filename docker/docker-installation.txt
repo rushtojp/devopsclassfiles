@@ -21,3 +21,8 @@ _________
 How to create AWS Ubuntu instance!
 
 https://www.cloudbooklet.com/create-an-ec2-instance-on-aws-with-ubuntu-18-04/
+
+
+#######
+
+root@sog-docker-sept-wd:~# docker run -d --name jenkins -p 8080:8080 jenkins/jenkins
