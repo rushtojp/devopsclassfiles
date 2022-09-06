@@ -43,6 +43,10 @@ terraform destroy
 Terraform aws
 https://learn.hashicorp.com/tutorials/terraform/aws-build?in=terraform/aws-get-started
 
+AWS EC2 Location - region and ami ids
+
+https://cloud-images.ubuntu.com/locator/ec2/
+
 ------------------------------------------------------------------------------------
 # multiple ec2 instances
 https://automateinfra.com/2021/03/22/how-to-launch-multiple-ec2-instances-on-aws-using-terraform/
