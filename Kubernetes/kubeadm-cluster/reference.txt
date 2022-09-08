@@ -31,3 +31,7 @@ https://stackoverflow.com/questions/71669875/how-to-completely-uninstall-docker
 
 docker version to install 18.09
 
+install a specific verison of docker
+
+https://docs.docker.com/engine/install/ubuntu/
+
