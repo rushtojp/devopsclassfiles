@@ -21,3 +21,7 @@ Expose the dashboard
 
 kubectl describe svc kubernetes-dashboard -n kube-system
 
+Kubeadm Errors and Fixes
+
+https://www.devopsschool.com/blog/kubernetes-error-kubeadm-related-errors-and-solutions/
+
