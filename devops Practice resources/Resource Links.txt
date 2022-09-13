@@ -111,6 +111,10 @@ Cloud comparison Tools
 
 https://comparecloud.in/
 
+AWS Policy Generator Tool
+
+https://awspolicygen.s3.amazonaws.com/policygen.html
+
 
 
 
