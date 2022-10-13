@@ -6,3 +6,7 @@ Pycharm Community Edition Download link
 
 https://www.jetbrains.com/pycharm/download/download-thanks.html?platform=windows&code=PCC
 
+Code Samples and Practice Exercises
+
+https://github.com/rushtojp/python-foundations-3-weeks.git
+
