@@ -13,9 +13,9 @@ KUbernetes
 
 https://kubernetes.io/docs/tasks/run-application/
 
-https://www.katacoda.com/courses/kubernetes/playground
+https://killercoda.com/pricing
 
-https://labs.play-with-k8s.com/
+
 
 Azure Architecture Center
 #############################
