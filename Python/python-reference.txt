@@ -1,0 +1,8 @@
+Python installation Link
+
+https://www.python.org/downloads/
+
+Pycharm Community Edition Download link
+
+https://www.jetbrains.com/pycharm/download/download-thanks.html?platform=windows&code=PCC
+
