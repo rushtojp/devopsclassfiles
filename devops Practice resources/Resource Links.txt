@@ -115,6 +115,11 @@ AWS Policy Generator Tool
 
 https://awspolicygen.s3.amazonaws.com/policygen.html
 
+AWS Well Architected Labs
+##########################
+
+https://www.wellarchitectedlabs.com/
+
 
 
 
