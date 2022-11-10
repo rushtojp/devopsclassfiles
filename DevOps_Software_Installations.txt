@@ -31,3 +31,8 @@ https://docs.microsoft.com/en-us/windows/wsl/about
 VS Code download and installation
 
 https://code.visualstudio.com/download
+
+Rapid Environment Editor - For editing path and variables
+
+https://www.rapidee.com/en/download
+
