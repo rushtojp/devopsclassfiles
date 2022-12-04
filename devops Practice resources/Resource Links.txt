@@ -120,6 +120,12 @@ AWS Well Architected Labs
 
 https://www.wellarchitectedlabs.com/
 
+Architect Roles - Job Definition and Description
+#################################################
+
+
+https://github.com/anitsh/til/issues/439
+
 
 
 
