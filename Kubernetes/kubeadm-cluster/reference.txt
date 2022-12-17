@@ -17,6 +17,12 @@ https://www.cloudsigma.com/how-to-create-a-kubernetes-cluster-using-kubeadm-on-u
 
 ##############
 
+installatino using containerd
+
+https://k21academy.com/docker-kubernetes/three-node-kubernetes-cluster/
+
+############
+
 
 https://www.gremlin.com/community/tutorials/how-to-create-a-kubernetes-cluster-on-ubuntu-16-04-with-kubeadm-and-weave-net/
 
