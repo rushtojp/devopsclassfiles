@@ -126,6 +126,13 @@ Architect Roles - Job Definition and Description
 
 https://github.com/anitsh/til/issues/439
 
+###########
+Ansible code snippet generator
+
+https://ansible.ai/
+
+#############
+
 
 
 
