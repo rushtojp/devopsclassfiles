@@ -133,7 +133,10 @@ https://ansible.ai/
 
 #############
 
+encoding - decoding tool
 
+https://www.base64encode.org/
+#############
 
 
 
