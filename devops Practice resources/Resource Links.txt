@@ -138,5 +138,10 @@ encoding - decoding tool
 https://www.base64encode.org/
 #############
 
+Azure Charts for referring all the above
+
+https://azurecharts.com/
+
+##############
 
 
