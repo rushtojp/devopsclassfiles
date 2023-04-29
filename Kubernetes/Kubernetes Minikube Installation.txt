@@ -1,3 +1,5 @@
+Please use ubuntu 18.04 - in aws t2.medium - min 2vpcu and 4 to 8GB ram
+
 apt-get update
 apt-get install docker.io -y
 
