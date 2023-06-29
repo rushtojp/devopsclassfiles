@@ -1,0 +1,3 @@
+## Create default subnet ##
+
+aws ec2 create-default-subnet --availability-zone ap-southeast-1a
