@@ -145,6 +145,13 @@ https://azurecharts.com/
 
 ##############
 
+AWS Developer Center
+
+https://aws.amazon.com/developer/
+
+
+###############
+
 Good reference books
 
 https://books.goalkicker.com/
