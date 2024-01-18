@@ -156,3 +156,17 @@ Good reference books
 
 https://books.goalkicker.com/
 
+###############
+
+AWS Region comparison tool
+
+https://region-comparison-tool.com/
+
+#################
+
+AWS Quick start templates
+
+https://aws.amazon.com/quickstart/
+
+##############
+
