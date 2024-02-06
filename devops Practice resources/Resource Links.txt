@@ -156,3 +156,11 @@ Good reference books
 
 https://books.goalkicker.com/
 
+##########
+
+AI Explorer of AWS
+
+https://aiexplorer.aws.amazon.com/?lang=en
+
+###############
+
