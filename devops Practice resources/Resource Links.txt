@@ -164,3 +164,9 @@ https://aiexplorer.aws.amazon.com/?lang=en
 
 ###############
 
+Azure Course blueprints
+
+https://techcommunity.microsoft.com/discussions/azurearchitecture/azure-course-blueprints/4012399
+
+###################
+
