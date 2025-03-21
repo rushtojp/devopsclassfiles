@@ -170,3 +170,15 @@ https://techcommunity.microsoft.com/discussions/azurearchitecture/azure-course-b
 
 ###############
 
+Teachable machine to demo AI training and others.
+
+https://teachablemachine.withgoogle.com/
+
+############
+
+Azure architecture diagrams
+https://azurediagrams.com/
+
+##########
+
+
