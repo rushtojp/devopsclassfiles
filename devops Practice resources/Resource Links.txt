@@ -180,5 +180,8 @@ Azure architecture diagrams
 https://azurediagrams.com/
 
 ##########
+AI App Templates
+https://azure.github.io/ai-app-templates/
 
+###########
 
