@@ -190,3 +190,13 @@ tr -dc A-Za-z0-9 </dev/urandom | head -c 32
 
 ##########
 
+Ora hydra installation steps
+
+https://www.ory.sh/docs/hydra/self-hosted/configure-deploy
+
+Zitadeal step by step configuration
+
+https://docs.google.com/document/d/1vJXl9-1F3xiW-EHSMoUuYOXqYdYX6Zlzs-tQNGN26Ic/edit?pli=1&tab=t.0
+
+######################################################
+
