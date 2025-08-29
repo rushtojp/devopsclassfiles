@@ -184,4 +184,9 @@ AI App Templates
 https://azure.github.io/ai-app-templates/
 
 ###########
+32 bit key generation command
+
+tr -dc A-Za-z0-9 </dev/urandom | head -c 32
+
+##########
 
