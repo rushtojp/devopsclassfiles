@@ -206,3 +206,9 @@ https://docs.google.com/document/d/1VFjEarh7qx0F1J6U8wvOfOZ_RDwoqxaCUQDS2qkHS78/
 
 ###########
 
+Zitadel OIDC playground
+
+https://zitadel.com/blog/zitadel-oidc-playground
+
+#############
+
