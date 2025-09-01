@@ -212,3 +212,11 @@ https://zitadel.com/blog/zitadel-oidc-playground
 
 #############
 
+oidc & oath debugger
+
+https://oidcdebugger.com/
+
+https://github.com/rcbj/oauth2-oidc-debugger
+
+############
+
